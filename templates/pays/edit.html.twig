@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Pays{% endblock %}
+
+{% block body %}
+{% include 'partials/nav.html.twig' %}
+    <div class="content my-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 ">
+                    {% include 'Partials/showPays.html.twig' %}
+                    {% include 'partials/delelePays.html.twig' %}
+                    {% include 'partials/retourPays.html.twig' %}
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-12 mx-auto">
+                        <div class="card mt-3">
+                            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                            <div class="card-header card-header-warning card-header-text">
+                                <div class="card-text">
+                                    <h4 class="card-title">Editer {{ pay.libpays }}</h4>
+                                </div>
+                            </div>
+                            <div class="card-content px-5 py-2 ">
+                                {{ include('pays/_form.html.twig') }}
+                                <button class="btn btn-warning btn-fill btn-wd edit">{{ button_label|default('Enregistrer') }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

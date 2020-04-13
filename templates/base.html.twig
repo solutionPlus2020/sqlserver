@@ -2,11 +2,33 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
         <title>{% block title %}Welcome!{% endblock %}</title>
+        {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+    <div class="wrapper ">
+        {% include 'partials/aside.html.twig' %}
+        <div class="main-panel">
+
+            <div class="content mb-0 pb-0" >
+                <div class="container-fluid mb-0">
+                    <!-- your content here -->
+                    {% block body %}
+
+                    {% endblock %}
+                </div>
+            </div>
+            {% include 'partials/footer.html.twig' %}
+        </div>
+    </div>
+
+        {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('script') }}
+    {{ encore_entry_script_tags('alert') }}
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

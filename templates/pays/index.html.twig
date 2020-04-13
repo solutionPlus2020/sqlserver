@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pays index{% endblock %}
+
+{% block body %}
+    {% include 'partials/nav.html.twig' %}
+<!--------------------------------------deuxiéme ecran-------------------------------------------------------------------------->
+   <div class=" d-flex flex-wrap">
+        {% for key,pay in pays %}
+        <div class="card col-sm-6 col-lg-3">
+            {% if key%4==0 %}
+
+            <div class="card-header card-header-text card-header-warning">
+                {% elseif key%4==1 %}
+                <div class="card-header card-header-text card-header-primary">
+                    {% elseif key%4==2 %}
+                    <div class="card-header card-header-text card-header-rose">
+                        {% elseif key%4==3 %}
+                        <div class="card-header card-header-text card-header-info">
+                {% endif %}
+                <div class="card-text">
+                    <h4 class="card-title">{{ pay.libpays }}  <span class="card-category ml-1">{{ pay.codepays }}</span></h4>
+                    <p class="card-category">{{ pay.place }}</p>
+                </div>
+            </div>
+            <div class="card-body table-responsive ">
+                <div class="d-flex justify-content-between">
+                <strong>ID:{{ pay.idpays }}</strong>
+                    <strong>ORDRE:  {{ pay.ordre }}</strong>
+                <strong>NATURE: {{ pay.nature }}</strong>
+                </div>
+               {% if not pay.continent  %}
+                   {% else %}
+                <span>CONTINENT:</span> {{ pay.continent }}
+                {% endif %}
+                <hr>
+                <button type="button" rel="tooltip" class="btn btn-success p-2">
+                    <a class="text-light" href="{{ path('pays_edit', {'idpays': pay.idpays}) }}">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                </button>
+
+
+                <button type="button" rel="tooltip" class="btn btn-behance p-2 ">
+                    <a class="text-light" href="{{ path('pays_edit', {'idpays': pay.idpays}) }}">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+   {#<table class="table">
+        <thead>
+            <tr>
+                <th>Idpays</th>
+                <th>Codepays</th>
+                <th>Libpays</th>
+                <th>Place</th>
+                <th>Ordre</th>
+                <th>Nature</th>
+                <th>Continent</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pay in pays %}
+            <tr>
+                <td>{{ pay.idpays }}</td>
+                <td>{{ pay.codepays }}</td>
+                <td>{{ pay.libpays }}</td>
+                <td>{{ pay.place }}</td>
+                <td>{{ pay.ordre }}</td>
+                <td>{{ pay.nature }}</td>
+                <td>{{ pay.continent }}</td>
+                <td>
+                    <a href="{{ path('pays_show', {'idpays': pay.idpays}) }}">show</a>
+                    <a href="{{ path('pays_edit', {'idpays': pay.idpays}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>#}
+    <button type="button" rel="tooltip" class="btn btn-primary p-2 px-3 mr-1">
+    <a class="text-light" href="{{ path('pays_new') }}"><i class="fas fa-plus"></i></a>
+    </button><a  href="{{ path('pays_new') }}">Create new</a>
+{% endblock %}
+
+        {% block javascripts %}
+
+        {% endblock %}

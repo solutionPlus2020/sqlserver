@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Achatvol index{% endblock %}
+
+{% block body %}
+    <h1>Achatvol index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Seqachatvol</th>
+                <th>Seqfact</th>
+                <th>Datesaisie</th>
+                <th>Seqvol</th>
+                <th>Confirmerpar</th>
+                <th>Seqresa</th>
+                <th>Total</th>
+                <th>Nbpax</th>
+                <th>Prix</th>
+                <th>Pnr</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for achatvol in achatvols %}
+            <tr>
+                <td>{{ achatvol.seqachatvol }}</td>
+                <td>{{ achatvol.seqfact }}</td>
+                <td>{{ achatvol.datesaisie ? achatvol.datesaisie|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ achatvol.seqvol }}</td>
+                <td>{{ achatvol.confirmerpar }}</td>
+                <td>{{ achatvol.seqresa }}</td>
+                <td>{{ achatvol.total }}</td>
+                <td>{{ achatvol.nbpax }}</td>
+                <td>{{ achatvol.prix }}</td>
+                <td>{{ achatvol.pnr }}</td>
+                <td>
+                    <a href="{{ path('achatvol_show', {'seqfact': achatvol.seqfact}) }}">show</a>
+                    <a href="{{ path('achatvol_edit', {'seqfact': achatvol.seqfact}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('achatvol_new') }}">Create new</a>
+{% endblock %}

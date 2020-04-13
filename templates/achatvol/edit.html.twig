@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Achatvol{% endblock %}
+
+{% block body %}
+    <h1>Edit Achatvol</h1>
+
+    {{ include('achatvol/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('achatvol_index') }}">back to list</a>
+
+    {{ include('achatvol/_delete_form.html.twig') }}
+{% endblock %}

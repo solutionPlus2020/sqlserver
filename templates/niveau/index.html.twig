@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Niveau index{% endblock %}
+
+{% block body %}
+    <h1>Niveau index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Seqniveau</th>
+                <th>Libniveau</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for niveau in niveaux %}
+            <tr>
+                <td>{{ niveau.seqniveau }}</td>
+                <td>{{ niveau.libniveau }}</td>
+                <td>
+                    <a href="{{ path('niveau_show', {'seqniveau': niveau.seqniveau}) }}">show</a>
+                    <a href="{{ path('niveau_edit', {'seqniveau': niveau.seqniveau}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('niveau_new') }}">Create new</a>
+{% endblock %}

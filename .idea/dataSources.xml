@@ -7,5 +7,24 @@
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://localhost</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="jdbc:sqlserver://5.196.78.86:1433/RFT_TEST:1433" uuid="80c88a5b-3623-4dfc-8f9e-b166beab0608">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://5.196.78.86:1433/RFT_TEST:1433</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="5.196.78.86:1433/RFT_TEST" uuid="92b262df-1e10-45ad-9df0-4262b0f19459">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>5.196.78.86:1433/RFT_TEST</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="sa" uuid="b32acf66-5eb9-4659-871b-c5ed16f90c60">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>sa:Solplus2015//5.196.78.86:1443/RFT_TEST</jdbc-url>
+    </data-source>
   </component>
 </project>

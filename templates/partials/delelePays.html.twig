@@ -1,0 +1,56 @@
+<div class="card card-product mt-5">
+    <div class="card-header card-header-image card-header-rose  p-5" data-header-animation="true">
+        <div class="">
+            <h4 class="card-title">{{ pay.libpays }}
+                <span class="card-category ml-1">{{ pay.codepays }}</span>
+                <p class="card-category">{{ pay.place }}</p>
+            </h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-actions text-center">
+            <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom"
+                    title="View">
+                <button class="btn  btn-default btn-link">
+                    <a href="{{ path('pays_index') }}">
+                        <i class="fas fa-th-list"></i>
+                    </a>
+                </button>
+            </button>
+            <button type="button" class="btn btn-success btn-link" rel="tooltip" data-placement="bottom"
+                    title="Edit">
+                <button class="btn  btn-default btn-link">
+                    <a class="text-success" href="{{ path('pays_edit', {'idpays': pay.idpays}) }}">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                </button>
+            </button>
+            <button type="button" class="btn btn-danger btn-link m-0 p-0" rel="tooltip" data-placement="bottom" title="Remove">
+                {# <!--  <form method="post" action="{{ path('pays_delete', {'idpays': pay.idpays}) }}"
+                         onsubmit="return confirm('Vous êtes sûr de supprimer {{ pay.libpays }} ?');">
+                       <input type="hidden" name="_method" value="DELETE">
+                       <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ pay.idpays) }}">
+                       <button class="btn text-danger btn-default btn-link">
+                           <i class="fas fa-trash-alt"></i>
+                       </button>
+                   </form>-->#}
+                {% include 'pays/_delete_form.html.twig' %}
+           </button>
+        </div>
+        <h4 class="card-title">
+            <a href="#pablo">NATURE: {{ pay.nature }}</a>
+        </h4>
+        <div class="card-description">
+            ORDRE:{{ pay.ordre }}
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="price">
+            <h4>ID:{{ pay.idpays }}</h4>
+        </div>
+        {{ include('pays/_delete_form.html.twig') }}
+        <div class="stats">
+            <p class="card-category"><i class="fas fa-map-marker-alt "></i> {{ pay.continent }}</p>
+        </div>
+    </div>
+</div>

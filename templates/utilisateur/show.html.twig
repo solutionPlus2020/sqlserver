@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block body %}
+    <h1>Utilisateur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Sequtil</th>
+                <td>{{ utilisateur.sequtil }}</td>
+            </tr>
+            <tr>
+                <th>Maj</th>
+                <td>{{ utilisateur.maj ? utilisateur.maj|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Codeutil</th>
+                <td>{{ utilisateur.codeutil }}</td>
+            </tr>
+            <tr>
+                <th>Nomutil</th>
+                <td>{{ utilisateur.nomutil }}</td>
+            </tr>
+            <tr>
+                <th>Profilutil</th>
+                <td>{{ utilisateur.profilutil }}</td>
+            </tr>
+            <tr>
+                <th>Mdp</th>
+                <td>{{ utilisateur.mdp }}</td>
+            </tr>
+            <tr>
+                <th>Badge</th>
+                <td>{{ utilisateur.badge }}</td>
+            </tr>
+            <tr>
+                <th>Flag1</th>
+                <td>{{ utilisateur.flag1 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Flag2</th>
+                <td>{{ utilisateur.flag2 ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Datedeb</th>
+                <td>{{ utilisateur.datedeb ? utilisateur.datedeb|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Heured</th>
+                <td>{{ utilisateur.heured ? utilisateur.heured|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{{ utilisateur.datefin ? utilisateur.datefin|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Heuref</th>
+                <td>{{ utilisateur.heuref ? utilisateur.heuref|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Encours</th>
+                <td>{{ utilisateur.encours ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Emailutil</th>
+                <td>{{ utilisateur.emailutil }}</td>
+            </tr>
+            <tr>
+                <th>Weblogin</th>
+                <td>{{ utilisateur.weblogin }}</td>
+            </tr>
+            <tr>
+                <th>Webmdp</th>
+                <td>{{ utilisateur.webmdp }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('utilisateur_index') }}">back to list</a>
+
+    <a href="{{ path('utilisateur_edit', {'sequtil': utilisateur.sequtil}) }}">edit</a>
+
+    {{ include('utilisateur/_delete_form.html.twig') }}
+{% endblock %}

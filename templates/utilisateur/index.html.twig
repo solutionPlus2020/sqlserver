@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur index{% endblock %}
+
+{% block body %}
+    <h1>Utilisateur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sequtil</th>
+                <th>Maj</th>
+                <th>Codeutil</th>
+                <th>Nomutil</th>
+                <th>Rôle</th>
+                <th>Profilutil</th>
+                <th>Mdp</th>
+                <th>Badge</th>
+                <th>Flag1</th>
+                <th>Flag2</th>
+                <th>Datedeb</th>
+                <th>Heured</th>
+                <th>Datefin</th>
+                <th>Heuref</th>
+                <th>Encours</th>
+                <th>Emailutil</th>
+                <th>Weblogin</th>
+                <th>Webmdp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for utilisateur in utilisateurs %}
+            <tr>
+
+                <td>{{ utilisateur.sequtil }}</td>
+                <td>{{ utilisateur.maj ? utilisateur.maj|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ utilisateur.codeutil }}</td>
+                <td>{{ utilisateur.nomutil }}</td>
+                <td>{{ utilisateur.seqniveau }}</td>
+                <td>{{ utilisateur.profilutil }}</td>
+                <td>{{ utilisateur.mdp }}</td>
+                <td>{{ utilisateur.badge }}</td>
+                <td>{{ utilisateur.flag1 ? 'Yes' : 'No' }}</td>
+                <td>{{ utilisateur.flag2 ? 'Yes' : 'No' }}</td>
+                <td>{{ utilisateur.datedeb ? utilisateur.datedeb|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ utilisateur.heured ? utilisateur.heured|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ utilisateur.datefin ? utilisateur.datefin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ utilisateur.heuref ? utilisateur.heuref|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ utilisateur.encours ? 'Yes' : 'No' }}</td>
+                <td>{{ utilisateur.emailutil }}</td>
+                <td>{{ utilisateur.weblogin }}</td>
+                <td>{{ utilisateur.webmdp }}</td>
+                <td>
+                    <a href="{{ path('utilisateur_show', {'sequtil': utilisateur.sequtil}) }}">show</a>
+                    <a href="{{ path('utilisateur_edit', {'sequtil': utilisateur.sequtil}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('utilisateur_new') }}">Create new</a>
+{% endblock %}

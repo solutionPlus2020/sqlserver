@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use DateTimeInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Achatvol
@@ -29,7 +31,8 @@ class Achatvol
     private $seqfact = '0';
 
     /**
-     * @var \DateTime
+     * @Assert\DateTime
+     * @var string A "Y-m-d H:i:s" formatted value
      *
      * @ORM\Column(name="DATESAISIE", type="datetime", nullable=false)
      */

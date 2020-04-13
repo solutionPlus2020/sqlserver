@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Achatfour{% endblock %}
+
+{% block body %}
+    <h1>Achatfour</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Seqachatfour</th>
+                <td>{{ achatfour.seqachatfour }}</td>
+            </tr>
+            <tr>
+                <th>Seqresa</th>
+                <td>{{ achatfour.seqresa }}</td>
+            </tr>
+            <tr>
+                <th>Achatvol</th>
+                <td>{{ achatfour.achatvol }}</td>
+            </tr>
+            <tr>
+                <th>Fouvol</th>
+                <td>{{ achatfour.fouvol }}</td>
+            </tr>
+            <tr>
+                <th>Achathot</th>
+                <td>{{ achatfour.achathot }}</td>
+            </tr>
+            <tr>
+                <th>Fouhot</th>
+                <td>{{ achatfour.fouhot }}</td>
+            </tr>
+            <tr>
+                <th>Achattrans</th>
+                <td>{{ achatfour.achattrans }}</td>
+            </tr>
+            <tr>
+                <th>Foutrans</th>
+                <td>{{ achatfour.foutrans }}</td>
+            </tr>
+            <tr>
+                <th>Achatass</th>
+                <td>{{ achatfour.achatass }}</td>
+            </tr>
+            <tr>
+                <th>Fouass</th>
+                <td>{{ achatfour.fouass }}</td>
+            </tr>
+            <tr>
+                <th>Achatautre</th>
+                <td>{{ achatfour.achatautre }}</td>
+            </tr>
+            <tr>
+                <th>Fouautre</th>
+                <td>{{ achatfour.fouautre }}</td>
+            </tr>
+            <tr>
+                <th>Achatcure</th>
+                <td>{{ achatfour.achatcure }}</td>
+            </tr>
+            <tr>
+                <th>Foucure</th>
+                <td>{{ achatfour.foucure }}</td>
+            </tr>
+            <tr>
+                <th>Export</th>
+                <td>{{ achatfour.export }}</td>
+            </tr>
+            <tr>
+                <th>CommVp</th>
+                <td>{{ achatfour.commVp }}</td>
+            </tr>
+            <tr>
+                <th>AchatTaxesolidarite</th>
+                <td>{{ achatfour.achatTaxesolidarite }}</td>
+            </tr>
+            <tr>
+                <th>AchatTaxecarbu</th>
+                <td>{{ achatfour.achatTaxecarbu }}</td>
+            </tr>
+            <tr>
+                <th>AchatTaxeaeroport</th>
+                <td>{{ achatfour.achatTaxeaeroport }}</td>
+            </tr>
+            <tr>
+                <th>AchatEmpty</th>
+                <td>{{ achatfour.achatEmpty }}</td>
+            </tr>
+            <tr>
+                <th>AchatPrepost</th>
+                <td>{{ achatfour.achatPrepost }}</td>
+            </tr>
+            <tr>
+                <th>AchatKappa</th>
+                <td>{{ achatfour.achatKappa }}</td>
+            </tr>
+            <tr>
+                <th>ArretDynamisme</th>
+                <td>{{ achatfour.arretDynamisme }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('achatfour_index') }}">back to list</a>
+
+    <a href="{{ path('achatfour_edit', {'seqresa': achatfour.seqresa}) }}">edit</a>
+
+    {{ include('achatfour/_delete_form.html.twig') }}
+{% endblock %}

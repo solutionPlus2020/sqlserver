@@ -1,0 +1,16 @@
+<form method="post" action="{{ path('pays_delete', {'idpays': pay.idpays}) }}" onsubmit= "alertDelete(e)"
+       >
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ pay.idpays) }}">
+   <!-- <button class="btn btn-rose "><strong>Supprimer</strong></button>-->
+    <!-- <button id='alertss' class="btn btn-rose btn-fill alert py-2 px-5" >Supprimer</button>-->
+     <button class="btn text-danger btn-default btn-link ">
+         <i class="fas fa-trash-alt "></i>
+     </button>
+ </form>
+ <!--<div class="card ">
+     <div class="card-body text-center">
+         <h5 class="card-text">...and by passing a parameter, you can execute something else for "Cancel"</h5>
+         <button id='alertss' class="btn btn-rose btn-fill alert" >Try me!</button>
+     </div>
+ </div>-->

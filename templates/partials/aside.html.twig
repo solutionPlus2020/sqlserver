@@ -1,0 +1,58 @@
+<div class="sidebar" data-color="green" data-background-color="white" style="background-color: #191454">
+    <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+    Tip 2: you can also add an image using data-image tag
+-->
+    <div class="logo">
+        <a href="" class="simple-text logo-mini ml-3 mr-2">
+            <img src="{{ asset('build/images/ROYAL.gif') }}" alt="log" width=30 >
+        </a>
+        <a href="#" class="simple-text logo-normal ml-0" style="color: #ffcb05">
+            ROYAL FIRST TRAVEL
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            {#<li class="nav-item   ">
+                <a class="nav-link" href="#0">
+                    <i class="fas fa-globe"></i>
+                    <span>Pays</span>
+                </a>
+            </li>#}
+            <li class="nav-item  ">
+                <a class="nav-link bg-success text-light" data-toggle="collapse" href="#pagesExamples">
+                    <p>
+                        <i class=" fas fa-globe"></i>
+                        <span > Pays</span>
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pagesExamples">
+                    <ul class="nav text-light">
+                        <li class="nav-item ">
+                            <a class="nav-link text-light" href="{{ path('pays_index') }}">
+                                <span class="sidebar-mini"> <i class="fas fa-th-list"></i> </span>
+                                <span class="sidebar-normal"> Liste </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-light" href="{{ path('pays_index_data') }}">
+                                <span class="sidebar-mini"> <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i> </span>
+                                <span class="sidebar-normal"> Liste </span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="nav-link text-light" href="{{ path('pays_new') }}">
+                                <span class="sidebar-mini"><i class="fas fa-plus-square"></i></span>
+                                <span class="sidebar-normal"> Nouveau </span><i class="fas fa-wrench"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>

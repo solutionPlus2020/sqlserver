@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Utilisateur
@@ -23,6 +26,7 @@ class Utilisateur
 
     /**
      * @var \DateTime
+     * @Assert\DateTime()
      *
      * @ORM\Column(name="MAJ", type="datetime", nullable=false)
      */
@@ -41,6 +45,7 @@ class Utilisateur
      * @ORM\Column(name="NOMUTIL", type="string", length=30, nullable=false, options={"default"=" "})
      */
     private $nomutil = ' ';
+
 
     /**
      * @var string
@@ -150,7 +155,7 @@ class Utilisateur
 
     public function getMaj(): ?\DateTimeInterface
     {
-        return $this->maj;
+        return  $this->maj;
     }
 
     public function setMaj(\DateTimeInterface $maj): self
@@ -351,6 +356,21 @@ class Utilisateur
 
         return $this;
     }
+    public function getUsername(): string {
+        return (string)$this->nomutil;
+    }
 
+
+    public function getPassword() {
+        return $this->mdp;
+    }
+
+    public function eraseCredentials() {}
+    public function getSalt() {}
+
+    public function __toString()
+    {
+        return $this->nomutil;
+    }
 
 }

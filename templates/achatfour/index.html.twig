@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Achatfour index{% endblock %}
+
+{% block body %}
+    <h1>Achatfour index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Seqachatfour</th>
+                <th>Seqresa</th>
+                <th>Achatvol</th>
+                <th>Fouvol</th>
+                <th>Achathot</th>
+                <th>Fouhot</th>
+                <th>Achattrans</th>
+                <th>Foutrans</th>
+                <th>Achatass</th>
+                <th>Fouass</th>
+                <th>Achatautre</th>
+                <th>Fouautre</th>
+                <th>Achatcure</th>
+                <th>Foucure</th>
+                <th>Export</th>
+                <th>CommVp</th>
+                <th>AchatTaxesolidarite</th>
+                <th>AchatTaxecarbu</th>
+                <th>AchatTaxeaeroport</th>
+                <th>AchatEmpty</th>
+                <th>AchatPrepost</th>
+                <th>AchatKappa</th>
+                <th>ArretDynamisme</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for achatfour in achatfours %}
+            <tr>
+                <td>{{ achatfour.seqachatfour }}</td>
+                <td>{{ achatfour.seqresa }}</td>
+                <td>{{ achatfour.achatvol }}</td>
+                <td>{{ achatfour.fouvol }}</td>
+                <td>{{ achatfour.achathot }}</td>
+                <td>{{ achatfour.fouhot }}</td>
+                <td>{{ achatfour.achattrans }}</td>
+                <td>{{ achatfour.foutrans }}</td>
+                <td>{{ achatfour.achatass }}</td>
+                <td>{{ achatfour.fouass }}</td>
+                <td>{{ achatfour.achatautre }}</td>
+                <td>{{ achatfour.fouautre }}</td>
+                <td>{{ achatfour.achatcure }}</td>
+                <td>{{ achatfour.foucure }}</td>
+                <td>{{ achatfour.export }}</td>
+                <td>{{ achatfour.commVp }}</td>
+                <td>{{ achatfour.achatTaxesolidarite }}</td>
+                <td>{{ achatfour.achatTaxecarbu }}</td>
+                <td>{{ achatfour.achatTaxeaeroport }}</td>
+                <td>{{ achatfour.achatEmpty }}</td>
+                <td>{{ achatfour.achatPrepost }}</td>
+                <td>{{ achatfour.achatKappa }}</td>
+                <td>{{ achatfour.arretDynamisme }}</td>
+                <td>
+                    <a href="{{ path('achatfour_show', {'seqresa': achatfour.seqresa}) }}">show</a>
+                    <a href="{{ path('achatfour_edit', {'seqresa': achatfour.seqresa}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="24">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('achatfour_new') }}">Create new</a>
+{% endblock %}
