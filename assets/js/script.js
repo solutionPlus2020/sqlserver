@@ -1,4 +1,6 @@
-
+(function () {
+    $('#datetimepicker2').datepicker();
+});
 
 (function() {
     isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;

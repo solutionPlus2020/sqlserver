@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -13,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="UTILISATEUR", indexes={@ORM\Index(name="MDP", columns={"MDP"}), @ORM\Index(name="IDX_901FF15B43ECD2D9", columns={"SEQNIVEAU"})})
  * @ORM\Entity
  */
-class Utilisateur
+class Utilisateur implements UserInterface
 {
     /**
      * @var string
@@ -25,8 +23,6 @@ class Utilisateur
     private $sequtil;
 
     /**
-     * @var \DateTime
-     * @Assert\DateTime()
      *
      * @ORM\Column(name="MAJ", type="datetime", nullable=false)
      */
@@ -45,7 +41,6 @@ class Utilisateur
      * @ORM\Column(name="NOMUTIL", type="string", length=30, nullable=false, options={"default"=" "})
      */
     private $nomutil = ' ';
-
 
     /**
      * @var string
@@ -155,7 +150,7 @@ class Utilisateur
 
     public function getMaj(): ?\DateTimeInterface
     {
-        return  $this->maj;
+        return $this->maj;
     }
 
     public function setMaj(\DateTimeInterface $maj): self
@@ -356,21 +351,30 @@ class Utilisateur
 
         return $this;
     }
-    public function getUsername(): string {
-        return (string)$this->nomutil;
+    public function getRoles()
+    {
+        return [$this->getSeqniveau()];
     }
 
 
-    public function getPassword() {
+    public function getPassword()
+    {
         return $this->mdp;
     }
 
-    public function eraseCredentials() {}
-    public function getSalt() {}
 
-    public function __toString()
+    public function getSalt()
+    {
+
+    }
+
+
+    public function getUsername()
     {
         return $this->nomutil;
     }
+
+    public function eraseCredentials(){}
+
 
 }

@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th>Sequtil</th>
-                <th>Maj</th>
+                {#<th>Maj</th>#}
                 <th>Codeutil</th>
                 <th>Nomutil</th>
                 <th>Rôle</th>
@@ -18,10 +18,10 @@
                 <th>Badge</th>
                 <th>Flag1</th>
                 <th>Flag2</th>
-                <th>Datedeb</th>
+                {#<th>Datedeb</th>
                 <th>Heured</th>
                 <th>Datefin</th>
-                <th>Heuref</th>
+                <th>Heuref</th>#}
                 <th>Encours</th>
                 <th>Emailutil</th>
                 <th>Weblogin</th>
@@ -34,7 +34,7 @@
             <tr>
 
                 <td>{{ utilisateur.sequtil }}</td>
-                <td>{{ utilisateur.maj ? utilisateur.maj|date('Y-m-d H:i:s') : '' }}</td>
+                {#<td>{{ utilisateur.maj ? utilisateur.maj|date('Y-m-d H:i:s') : '' }}</td>#}
                 <td>{{ utilisateur.codeutil }}</td>
                 <td>{{ utilisateur.nomutil }}</td>
                 <td>{{ utilisateur.seqniveau }}</td>
@@ -43,10 +43,10 @@
                 <td>{{ utilisateur.badge }}</td>
                 <td>{{ utilisateur.flag1 ? 'Yes' : 'No' }}</td>
                 <td>{{ utilisateur.flag2 ? 'Yes' : 'No' }}</td>
-                <td>{{ utilisateur.datedeb ? utilisateur.datedeb|date('Y-m-d H:i:s') : '' }}</td>
+                {#<td>{{ utilisateur.datedeb ? utilisateur.datedeb|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ utilisateur.heured ? utilisateur.heured|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ utilisateur.datefin ? utilisateur.datefin|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ utilisateur.heuref ? utilisateur.heuref|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ utilisateur.heuref ? utilisateur.heuref|date('Y-m-d H:i:s') : '' }}</td>#}
                 <td>{{ utilisateur.encours ? 'Yes' : 'No' }}</td>
                 <td>{{ utilisateur.emailutil }}</td>
                 <td>{{ utilisateur.weblogin }}</td>

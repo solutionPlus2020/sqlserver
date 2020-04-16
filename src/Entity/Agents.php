@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Agents
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="AGENTS")
  * @ORM\Entity
  */
-class Agents
+class Agents implements UserInterface
 {
     /**
      * @var int
@@ -48,6 +49,7 @@ class Agents
      * @ORM\Column(name="mdp", type="string", length=100, nullable=false)
      */
     private $mdp;
+    private $plainPassword;
 
     /**
      * @var string
@@ -138,6 +140,52 @@ class Agents
         $this->email = $email;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($plainPassword): void
+    {
+        $this->plainPassword = $plainPassword;
+    }
+
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
+
+
+    public function getPassword()
+    {
+        return $this->mdp;
+    }
+
+
+    public function getSalt()
+    {
+
+    }
+
+
+    public function getUsername()
+    {
+        return $this->login;
+    }
+
+    public function eraseCredentials(){}
+
+    public function __toString()
+    {
+        return $this->nom.' '.$this->prenom;
     }
 
 

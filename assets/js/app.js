@@ -8,7 +8,14 @@ require('@fortawesome/fontawesome-free/js/all');
 require('datatables.net-bs4/js/dataTables.bootstrap4');
 
 require('sweetalert2/dist/sweetalert2.all');
-
+//require('bootstrap-datepicker/js/bootstrap-datepicker');
+//require('bootstrap-datetimepicker-4.17.37/bootstrap-datetimepicker.min');
+//require('tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4')
+//require('eonasdan-bootstrap-datetimepicker')
+;
+require('jquery-datetimepicker/build/jquery.datetimepicker.full')
+var moment = require('moment');
+moment().format();
 const swal = require('sweetalert2');
 
 /*
@@ -27,6 +34,18 @@ import '../css/app.css';
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
+});
+$(document).ready(function() {
+
+
+
+        $('#datetimepicker2').datetimepicker();
+
+});
+$(document).ready(function() {
+b
+        $('#datetimepicker1').datepicker();
+
 });
 $(document).ready(function() {
     $('#example').DataTable({

@@ -47,7 +47,7 @@ class Niveau
 
     public function __toString()
     {
-        return $this->libniveau." ".$this->seqniveau;
+        return $this->seqniveau.' '.$this->libniveau;
     }
 
 

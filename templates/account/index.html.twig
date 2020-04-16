@@ -35,6 +35,9 @@
         </div>
 
     </div>
+    {% if app.user %}
+        {{ app.user }}
    Binvenue {{app.user}}
+    {% endif %}
 {% endblock %}
 

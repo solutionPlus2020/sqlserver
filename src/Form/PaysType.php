@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Pays;
 
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
@@ -84,6 +85,7 @@ class PaysType extends AbstractType
                         'message' => "Vous devez renseigner la nature",
                     ]),]
             ])
+
             ->add('continent',TextType::class, [
                 'mapped' => true,
                 'constraints' => [
